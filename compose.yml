@@ -2,6 +2,7 @@ version: "3.9"
 services:
   primary:
     build: primary/
+    image: liasinkovska/replicated_log_primary
     ports:
       - "5000:5000"
     container_name: primary_node
@@ -13,6 +14,7 @@ services:
       - repl_log_net
   secondary_1:
     build: secondary/
+    image: liasinkovska/replicated_log_secondary_1
     ports:
       - "5001:5001"
     container_name: secondary_1
@@ -25,6 +27,7 @@ services:
       - repl_log_net
   secondary_2:
     build: secondary/
+    image: liasinkovska/replicated_log_secondary_2
     ports:
       - "5002:5001"
     container_name: secondary_2
